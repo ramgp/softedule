@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace SoftwareEducativoLasEstrellas.Utils
 {
@@ -12,6 +11,7 @@ namespace SoftwareEducativoLasEstrellas.Utils
         {
             if (extensions == null)
                 throw new ArgumentNullException("extensions");
+
             IEnumerable<FileInfo> files = dir.EnumerateFiles();
             return files.Where(f => extensions.Contains(f.Extension));
         }

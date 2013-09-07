@@ -24,9 +24,6 @@ namespace SoftwareEducativoLasEstrellas.Views
         public MediaView()
         {
             InitializeComponent();
-
-            FilesService fileService = new FilesService(@"d:\devdoc\others");
-            DataContext = new MediaViewModel(fileService);
         }
     }
 }

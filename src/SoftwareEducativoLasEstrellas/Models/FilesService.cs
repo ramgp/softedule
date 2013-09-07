@@ -1,9 +1,9 @@
-﻿using System;
+﻿using SoftwareEducativoLasEstrellas.Utils;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using SoftwareEducativoLasEstrellas.Utils;
+using System.Security;
 
 namespace SoftwareEducativoLasEstrellas.Models
 {
@@ -22,7 +22,7 @@ namespace SoftwareEducativoLasEstrellas.Models
             {
                 DirectoryInfo dirInfo = new DirectoryInfo(resourcesDirectory);
                 var files = from file in dirInfo.GetFilesByExtensions(DocumentFile.allowableDocuments)
-                                 select new DocumentFile(file.Name, TypeFrom(file.Extension), file.FullName);
+                            select new DocumentFile(file.Name, TypeFrom(file.Extension), file.FullName);
 
                 return files;
 
@@ -42,11 +42,11 @@ namespace SoftwareEducativoLasEstrellas.Models
             try
             {
                 DirectoryInfo dirInfo = new DirectoryInfo(resourcesDirectory);
+
                 var files = from file in dirInfo.GetFilesByExtensions(MediaFile.allowableMediaTypes)
-                                 select new MediaFile(file.Name, TypeFrom(file.Extension), file.FullName);
+                            select new MediaFile(file.Name, TypeFrom(file.Extension), file.FullName);
 
                 return files;
-
             }
             catch (UnauthorizedAccessException UAEx)
             {

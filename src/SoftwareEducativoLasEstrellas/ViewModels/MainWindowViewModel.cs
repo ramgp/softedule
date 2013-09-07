@@ -16,21 +16,22 @@ namespace SoftwareEducativoLasEstrellas.ViewModels
         public MainWindowViewModel()
         {
             category = "Cuentos";
-            filesService = new FilesService(@"d:\devdoc\others");
+            // TODO: change this to use a dynamic configurable path
+            filesService = new FilesService(@"X:\softedule");
             ShowMediaViewCommand = new RelayCommand(action => ShowMediaView(category));
             ShowDocumentViewCommand = new RelayCommand(action => ShowDocumentView(category));
 
-            ShowDocumentViewCommand.Execute(this);
+            //ShowDocumentViewCommand.Execute(null);
         }
 
         private void ShowDocumentView(string category)
         {
-            CurrentView = new MediaViewModel(filesService) { Category = category };
+            CurrentView = new DocumentViewModel(filesService) { Category = category };
         }
 
         private void ShowMediaView(string category)
         {
-            CurrentView = new DocumentViewModel(filesService) { Category = category };
+            CurrentView = new MediaViewModel(filesService) { Category = category };
         }
 
         public object CurrentView

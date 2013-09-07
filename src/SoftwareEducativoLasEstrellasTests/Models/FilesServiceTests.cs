@@ -13,11 +13,11 @@ namespace SoftwareEducativoLasEstrellas.Models.Tests
         [TestMethod()]
         public void FilesTest()
         {
-            FilesService fs = new FilesService(@"d:\devdoc\others");
+            FilesService fs = new FilesService(@"x:\softedule");
 
-            int count = fs.DocumentFiles().Count();
+            int count = fs.MediaFiles().Count();
 
-            Assert.AreEqual(2, count);
+            Assert.AreEqual(1, count);
         }
     }
 }
