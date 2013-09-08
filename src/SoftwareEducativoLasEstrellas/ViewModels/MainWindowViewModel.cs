@@ -1,8 +1,5 @@
-﻿using SoftwareEducativoLasEstrellas.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SoftwareEducativoLasEstrellas.Core;
+using SoftwareEducativoLasEstrellas.Models;
 using System.Windows.Input;
 
 namespace SoftwareEducativoLasEstrellas.ViewModels
@@ -18,20 +15,12 @@ namespace SoftwareEducativoLasEstrellas.ViewModels
             category = "Cuentos";
             // TODO: change this to use a dynamic configurable path
             filesService = new FilesService(@"X:\softedule");
-            ShowMediaViewCommand = new RelayCommand(action => ShowMediaView(category));
-            ShowDocumentViewCommand = new RelayCommand(action => ShowDocumentView(category));
-
-            //ShowDocumentViewCommand.Execute(null);
+            ShowResourceFileViewCommand = new RelayCommand(action => ShowResourceFileView(category));
         }
 
-        private void ShowDocumentView(string category)
+        private void ShowResourceFileView(string category)
         {
-            CurrentView = new DocumentViewModel(filesService) { Category = category };
-        }
-
-        private void ShowMediaView(string category)
-        {
-            CurrentView = new MediaViewModel(filesService) { Category = category };
+            CurrentView = new ResourceFileViewModel(filesService) { Category = category };
         }
 
         public object CurrentView
@@ -44,8 +33,6 @@ namespace SoftwareEducativoLasEstrellas.ViewModels
             }
         }
 
-        public ICommand ShowMediaViewCommand { get; set; }
-        public ICommand ShowDocumentViewCommand { get; set; }
-
+        public ICommand ShowResourceFileViewCommand { get; set; }
     }
 }

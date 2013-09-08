@@ -1,33 +1,31 @@
-﻿using SoftwareEducativoLasEstrellas.Models;
-using System;
-using System.Collections.Generic;
+﻿using SoftwareEducativoLasEstrellas.Core;
+using SoftwareEducativoLasEstrellas.Models;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 
 namespace SoftwareEducativoLasEstrellas.ViewModels
 {
-    public class MediaViewModel : ViewModelBase
+    public class ResourceFileViewModel : ViewModelBase
     {
-        private ObservableCollection<MediaFile> files;
+        private ObservableCollection<ResourceFile> files;
         private FilesService filesService;
-        private MediaFile selectedFile;
+        private ResourceFile selectedFile;
         private string category;
 
-        public MediaViewModel(FilesService filesService)
+        public ResourceFileViewModel(FilesService filesService)
         {
             this.filesService = filesService;
-            files = new ObservableCollection<MediaFile>(filesService.MediaFiles());
+            files = new ObservableCollection<ResourceFile>(filesService.ResourceFiles());
 
             if (files.Count > 0) selectedFile = files.First();
         }
 
-        public ObservableCollection<MediaFile> MediaFiles
+        public ObservableCollection<ResourceFile> MediaFiles
         {
             get { return files; }
         }
 
-        public MediaFile SelectedFile
+        public ResourceFile SelectedFile
         {
             get { return selectedFile; }
             set 

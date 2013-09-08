@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace SoftwareEducativoLasEstrellas.ViewModels
+namespace SoftwareEducativoLasEstrellas.Core
 {
     /// <summary>
     /// Base class for all the ViewModel classes with the INPC implementation

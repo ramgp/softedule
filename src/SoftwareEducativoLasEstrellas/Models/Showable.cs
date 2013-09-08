@@ -11,6 +11,5 @@ namespace SoftwareEducativoLasEstrellas.Models
         string Path { get; }
         string Category { get; set; }
         string FileName { get; set; }
-        bool ShowIn(Medium medium);
     }
 }

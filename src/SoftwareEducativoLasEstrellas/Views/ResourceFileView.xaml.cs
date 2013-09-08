@@ -3,11 +3,11 @@
 namespace SoftwareEducativoLasEstrellas.Views
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Interaction logic for MediaView.xaml
     /// </summary>
-    public partial class MainView : UserControl
+    public partial class ResourceFileView : UserControl
     {
-        public MainView()
+        public ResourceFileView()
         {
             InitializeComponent();
         }

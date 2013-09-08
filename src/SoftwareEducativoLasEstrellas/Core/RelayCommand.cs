@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace SoftwareEducativoLasEstrellas.ViewModels
+namespace SoftwareEducativoLasEstrellas.Core
 {
     /// <summary>
     /// A command whose sole purpose is to 

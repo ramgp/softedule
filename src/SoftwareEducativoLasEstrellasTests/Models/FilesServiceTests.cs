@@ -15,7 +15,7 @@ namespace SoftwareEducativoLasEstrellas.Models.Tests
         {
             FilesService fs = new FilesService(@"x:\softedule");
 
-            int count = fs.MediaFiles().Count();
+            int count = fs.ResourceFiles().Count();
 
             Assert.AreEqual(1, count);
         }

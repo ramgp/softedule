@@ -5,20 +5,21 @@ using System.Text;
 
 namespace SoftwareEducativoLasEstrellas.Models
 {
-    public class DocumentFile : Showable
+    public class ResourceFile : Showable
     {
         private string type;
         private string path;
-        public static string[] allowableDocuments = 
+        public static string[] AllowableResourceTypes = 
                                 { 
-                                    ".pdf"
+                                    ".mpg", ".mpeg", ".m1v", ".mp2", ".mpa", ".pdf",
+                                    ".mpe", ".avi",".wmv", ".mp3", ".mp4", ".wma"
                                 };
 
-        public DocumentFile(string fileName, string type, string path)
+        public ResourceFile(string fileName, string type, string file)
         {
             FileName = fileName;
             this.type = type;
-            this.path = path;
+            this.path = file;
         }
 
         public string Type
@@ -29,11 +30,6 @@ namespace SoftwareEducativoLasEstrellas.Models
         public string Path
         {
             get { return path; }
-        }
-
-        public bool ShowIn(Medium medium)
-        {
-            throw new NotImplementedException();
         }
 
         public string Category { get; set; }

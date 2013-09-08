@@ -27,10 +27,5 @@ namespace SoftwareEducativoLasEstrellas
             InitializeComponent();
             DataContext = new MainWindowViewModel();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
