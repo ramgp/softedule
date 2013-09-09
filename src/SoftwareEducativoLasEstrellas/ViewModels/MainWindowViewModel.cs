@@ -1,6 +1,7 @@
 ﻿using SoftwareEducativoLasEstrellas.Core;
 using SoftwareEducativoLasEstrellas.Models;
 using System.Windows.Input;
+using System.Configuration;
 
 namespace SoftwareEducativoLasEstrellas.ViewModels
 {    
@@ -13,8 +14,7 @@ namespace SoftwareEducativoLasEstrellas.ViewModels
         public MainWindowViewModel()
         {
             category = "Cuentos";
-            // TODO: change this to use a dynamic configurable path
-            filesService = new FilesService(@"X:\softedule");
+            filesService = new FilesService(@ConfigurationManager.AppSettings["Path"]);
             ShowResourceFileViewCommand = new RelayCommand(action => ShowResourceFileView(category));
         }
 

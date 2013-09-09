@@ -15,7 +15,7 @@
 		<ListBox x:Name="filesListBox"
 			Grid.Column="0"
 			Margin="5,5,10,5"
-			ItemsSource="{Binding MediaFiles}"
+			ItemsSource="{Binding Files}"
 			SelectedItem="{Binding SelectedFile}">
 
 			<ListBox.ItemTemplate>

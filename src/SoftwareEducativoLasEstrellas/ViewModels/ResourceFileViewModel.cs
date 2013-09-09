@@ -20,7 +20,7 @@ namespace SoftwareEducativoLasEstrellas.ViewModels
             if (files.Count > 0) selectedFile = files.First();
         }
 
-        public ObservableCollection<ResourceFile> MediaFiles
+        public ObservableCollection<ResourceFile> Files
         {
             get { return files; }
         }
